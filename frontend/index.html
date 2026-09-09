@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StatSkill AI - Official Statistics Competency Platform</title>
+  <meta name="description" content="AI-enabled Learning and Competency Development Platform for India's Official Statistical System (MoSPI / iGOT Karmayogi).">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/components.css">
+
+  <!-- Chart.js CDN for interactive visual analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- National Tricolor Top Accent -->
+  <div class="gov-top-accent"></div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="header-top">
+      <!-- Brand & Emblem -->
+      <div class="brand-container">
+        <div class="emblem-badge" title="National Statistical System">
+          <span>SS</span>
+        </div>
+        <div class="brand-text">
+          <h1>
+            <span class="app-title">StatSkill</span>
+            <span class="app-ai">AI</span>
+          </h1>
+          <div class="brand-subtext">India's Official Statistical System • MoSPI / NSSTA Capacity Engine</div>
+        </div>
+      </div>
+
+      <!-- Actions: Quick Persona Switcher & Active Officer Profile -->
+      <div class="header-actions">
+        <!-- Persona Quick Toggle -->
+        <div class="persona-switcher">
+          <span class="persona-label">Persona:</span>
+          <div id="persona-buttons-container" class="flex-gap-4">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Active User Badge -->
+        <div class="user-badge" id="user-badge-display">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <button class="btn btn-outline btn-sm" onclick="app.navigate('login')" title="Go to Login Portal">
+          <span>🔐 Login Portal</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs: All 12 Working Pages -->
+    <nav class="nav-bar">
+      <a href="#" class="nav-link" data-tab="login">
+        <span>🔐 1. Login</span>
+      </a>
+      <a href="#" class="nav-link active" data-tab="dashboard">
+        <span>📊 2. Dashboard</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="assessment">
+        <span>📝 3. Assessment</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="gaps">
+        <span>🎯 4. Gap Analysis</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="recommendations">
+        <span>🎓 5. Recommendations</span>
+        <span class="badge-counter" id="nav-rec-badge">4</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="catalogue">
+        <span>📚 6. Course Catalogue</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="documents">
+        <span>📁 7. Upload Material</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="mcq-generator">
+        <span>✨ 8. MCQ Generator</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="quiz">
+        <span>⏱️ 9. Quiz</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="quiz-results">
+        <span>🏆 10. Quiz Results</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="progress">
+        <span>📈 11. Competency Progress</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="admin">
+        <span>🏛️ 12. Admin Analytics</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="chatbot">
+        <span>💬 13. AI Doubt Assistant</span>
+      </a>
+      <a href="#" class="nav-link" data-tab="certifications">
+        <span>🎖️ 14. Credentials</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Closed-Loop Interactive Breadcrumb Bar -->
+  <div class="journey-bar-container">
+    <div class="journey-title">
+      <span>🔄 Closed-Loop Journey:</span>
+    </div>
+    <div class="journey-steps">
+      <div class="journey-step" data-tab="login" onclick="app.navigate('login')">
+        <span class="step-num">1</span>
+        <span>Login</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="assessment" onclick="app.navigate('assessment')">
+        <span class="step-num">2</span>
+        <span>Assessment</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="gaps" onclick="app.navigate('gaps')">
+        <span class="step-num">3</span>
+        <span>See Gaps</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="recommendations" onclick="app.navigate('recommendations')">
+        <span class="step-num">4</span>
+        <span>Recommendations</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="documents" onclick="app.navigate('documents')">
+        <span class="step-num">5</span>
+        <span>Upload Material</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="mcq-generator" onclick="app.navigate('mcq-generator')">
+        <span class="step-num">6</span>
+        <span>Generate MCQs</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="quiz" onclick="app.navigate('quiz')">
+        <span class="step-num">7</span>
+        <span>Take Quiz</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="quiz-results" onclick="app.navigate('quiz-results')">
+        <span class="step-num">8</span>
+        <span>See Results</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="progress" onclick="app.navigate('progress')">
+        <span class="step-num">9</span>
+        <span>Competency Progress</span>
+      </div>
+      <span class="journey-arrow">➔</span>
+
+      <div class="journey-step" data-tab="certifications" onclick="app.navigate('certifications')">
+        <span class="step-num">10</span>
+        <span>Earn Credentials</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Loading Indicator -->
+  <div id="global-loading-indicator" class="global-loading-indicator"></div>
+  <style>
+    @keyframes loading-bar {
+      0% { background-position: 100% 0; }
+      100% { background-position: -100% 0; }
+    }
+  </style>
+
+  <!-- Main View Container -->
+  <main class="main-content" id="app-main-content">
+    <!-- Dynamic Component Views rendered by app.js -->
+  </main>
+
+  <!-- Global Toast Notifications -->
+  <div id="toast-container"></div>
+
+  <!-- Government Platform Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-notice">
+        <strong>StatSkill AI</strong>
+        <span>•</span>
+        <span>National Statistical Systems Training Academy (NSSTA) & MoSPI</span>
+        <span>•</span>
+        <span class="footer-badge">MVP Production Build 1.0</span>
+      </div>
+      <div class="footer-meta">
+        Architecture incorporates an official <strong>iGOT Karmayogi Integration Adapter</strong>. Live authorized endpoints can be configured via environment settings.
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Client & Scripts -->
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

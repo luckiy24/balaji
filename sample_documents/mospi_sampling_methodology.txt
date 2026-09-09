@@ -1,0 +1,44 @@
+GOVERNMENT OF INDIA
+MINISTRY OF STATISTICS AND PROGRAMME IMPLEMENTATION (MoSPI)
+NATIONAL STATISTICAL SYSTEMS TRAINING ACADEMY (NSSTA)
+TRAINING MANUAL: SURVEY SAMPLING METHODS IN OFFICIAL STATISTICS
+DOCUMENT CODE: NSSTA-TM-2026-SMP-01
+
+CHAPTER 1: PRINCIPLES OF SAMPLING IN OFFICIAL STATISTICS
+Official statistics form the empirical bedrock of public policy, macroeconomic governance, and national planning in India. In large-scale socioeconomic surveys conducted by the National Sample Survey Office (NSSO), complete enumeration is neither economically feasible nor operationally practical. Therefore, scientific probability sampling is employed to derive unbiased population estimates with measurable precision.
+
+Section 1.1: Probability vs Non-Probability Sampling
+A fundamental tenet of official statistics is that every sampling unit in the target population must have a known, non-zero probability of selection. Simple Random Sampling (SRS) represents the purest theoretical form of probability selection. Under SRS Without Replacement (SRSWOR), each unit in a population of size N has an identical probability 1/N of being drawn into the sample size n. In contrast, non-probability sampling (such as quota or convenience sampling) introduces subjective enumerator bias and cannot yield valid sampling variance or standard error calculations.
+
+Section 1.2: The Sampling Frame
+The accuracy of any sample survey critically depends on the integrity of the Sampling Frame. A sampling frame is an exhaustive, up-to-date roster of all eligible sampling units. In rural India, the primary sampling frame consists of the Census enumeration blocks and revenue village boundaries. In urban areas, the Urban Frame Survey (UFS) blocks maintained by NSSO serve as the operational frame. Deficiencies in the frame—such as omission, duplication, or erroneous classification—directly introduce non-sampling errors into official survey outcomes.
+
+CHAPTER 2: STRATIFIED RANDOM SAMPLING
+When the target universe exhibits substantial heterogeneity across regions, agro-climatic zones, or socioeconomic classes, Simple Random Sampling may fail to capture representative variation.
+
+Section 2.1: Stratification Mechanism
+In Stratified Random Sampling, the heterogeneous parent population of size N is divided into K mutually exclusive and collectively exhaustive sub-populations, termed 'strata' (sizes N1, N2, ..., NK). Within each stratum, an independent probability sample of size nh is selected. The overarching statistical objective of stratification is to maximize the variance between strata while minimizing the variance within each individual stratum. This optimal partitioning substantially reduces the overall variance of the estimator compared to unstratified SRS.
+
+Section 2.2: Optimum Allocation (Neyman Allocation)
+The allocation of the total sample size n across the K strata can be executed via proportional allocation or optimum allocation. Neyman Allocation determines the sample size nh for stratum h by accounting for both stratum size Nh and the stratum standard deviation Sh:
+nh = n * (Nh * Sh) / SUM(Nh * Sh)
+When unit survey costs differ across remote geographic strata, modified Neyman-Tschuprow allocation incorporates cost factors to minimize variance for a fixed total survey budget.
+
+CHAPTER 3: MULTI-STAGE CLUSTER SAMPLING IN NSSO SURVEYS
+Section 3.1: Primary and Secondary Sampling Units
+For nationwide household surveys such as the Periodic Labour Force Survey (PLFS) and Household Consumption Expenditure Survey (HCES), NSSO implements a stratified multi-stage design. The Primary Sampling Units (PSUs) are 2011 Census villages in rural areas and UFS blocks in urban sectors. The Ultimate Stage Units (USUs) are households. In large PSUs exceeding 300 households or 1200 population, the PSU is sub-divided into Hamlet-groups (in rural areas) or Sub-blocks (in urban areas) to maintain field feasibility.
+
+Section 3.2: Cluster Sampling Trade-offs
+Cluster sampling offers decisive administrative advantages by concentrating field investigators within contiguous geographical clusters, thereby drastically curtailing travel expenditures and logistical delays. However, units within geographical clusters typically exhibit positive intra-cluster correlation (homogeneity), which increases the Design Effect (Deff). To counteract the inflation of sampling error, NSSO pairs cluster sampling with rigorous stratification and systematic sampling at the household listing stage.
+
+CHAPTER 4: SAMPLING ERROR AND NON-SAMPLING ERROR
+Section 4.1: Sampling Errors and Standard Error
+Sampling error is the discrepancy between the population parameter and the sample statistic that arises strictly because only a fraction of the universe is examined. Sampling error diminishes monotonically as the sample size increases and approaches zero when sample size equals population size. Standard errors and Relative Standard Errors (RSE) are officially published by MoSPI alongside point estimates to communicate precision to policy makers.
+
+Section 4.2: Non-Sampling Errors
+Non-sampling errors occur across both sample surveys and complete censuses. Major sources include:
+1. Frame imperfections and incomplete coverage
+2. Instrument measurement error due to ambiguous question phrasing
+3. Respondent recall fatigue and deliberate non-response
+4. Interviewer distortion and data transcription discrepancies
+While sampling error can be controlled through sample size and design optimization, non-sampling error can only be minimized through rigorous field supervision, standardized Computer-Assisted Personal Interviewing (CAPI) validation routines, and cognitive pre-testing of questionnaires.

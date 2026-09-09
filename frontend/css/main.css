@@ -1,0 +1,400 @@
+/* StatSkill AI - Design System & Base Styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Government of India & MoSPI Palette */
+  --gov-navy: #0B192C;
+  --gov-navy-light: #1E3E62;
+  --gov-blue-accent: #008DDA;
+  --gov-saffron: #FF6500;
+  --gov-saffron-light: #FFF5EB;
+  --gov-green: #059669;
+  --gov-green-light: #ECFDF5;
+  --gov-red: #DC2626;
+  --gov-red-light: #FEF2F2;
+  --gov-amber: #D97706;
+  --gov-amber-light: #FFFBEB;
+
+  /* Neutrals */
+  --bg-main: #F4F7FB;
+  --bg-card: #FFFFFF;
+  --bg-surface: #F8FAFC;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --border-color: #E2E8F0;
+  --border-focus: #1E3E62;
+
+  /* Shadows & Radius */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(11, 25, 44, 0.1), 0 4px 6px -2px rgba(11, 25, 44, 0.05);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--gov-navy);
+  letter-spacing: -0.02em;
+}
+
+/* Tricolor Top Accent */
+.gov-top-accent {
+  height: 4px;
+  background: linear-gradient(90deg, #FF6500 33%, #FFFFFF 33%, #FFFFFF 66%, #059669 66%);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Header & Navigation */
+.main-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 4px;
+  z-index: 999;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 28px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.emblem-badge {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--gov-navy), var(--gov-navy-light));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 20px;
+  box-shadow: 0 2px 8px rgba(11, 25, 44, 0.25);
+  border: 2px solid #FF6500;
+}
+
+.brand-text h1 {
+  font-size: 20px;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-text h1 .app-title {
+  color: var(--gov-navy);
+}
+
+.brand-text h1 .app-ai {
+  color: var(--gov-saffron);
+  font-size: 14px;
+  background: var(--gov-saffron-light);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 101, 0, 0.2);
+}
+
+.brand-subtext {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Header Actions & Quick Persona Bar */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.persona-switcher {
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  gap: 4px;
+}
+
+.persona-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.persona-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.persona-btn:hover {
+  background: #E2E8F0;
+  color: var(--gov-navy);
+}
+
+.persona-btn.active {
+  background: var(--gov-navy);
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(11, 25, 44, 0.2);
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px;
+  background: #F8FAFC;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gov-navy-light), var(--gov-blue-accent));
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.user-info .user-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gov-navy);
+  line-height: 1.1;
+}
+
+.user-info .user-role {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  padding: 0 28px;
+  background: #FFFFFF;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* hide scrollbar in IE/Edge */
+}
+
+/* WebKit scrollbar hide fallback */
+.nav-bar::-webkit-scrollbar {
+  display: none;
+}
+
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--gov-navy);
+  background-color: #F8FAFC;
+}
+
+.nav-link.active {
+  color: var(--gov-navy);
+  border-bottom-color: var(--gov-saffron);
+  background-color: #F8FAFC;
+}
+
+.nav-link .badge-counter {
+  font-size: 10px;
+  background: var(--gov-saffron);
+  color: #FFF;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* Closed Loop Journey Breadcrumbs Bar */
+.journey-bar-container {
+  background: linear-gradient(90deg, #0B192C 0%, #1E3E62 100%);
+  color: #FFFFFF;
+  padding: 10px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.journey-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FFD59E;
+}
+
+.journey-steps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11.5px;
+}
+
+.journey-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.journey-step:hover, .journey-step.active {
+  opacity: 1;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.journey-step.active .step-num {
+  background: #FF6500;
+  color: #FFFFFF;
+}
+
+.step-num {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.journey-arrow {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+}
+
+/* App Content Area */
+.main-content {
+  flex: 1;
+  padding: 24px 28px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Footer */
+.main-footer {
+  background: #0B192C;
+  color: #94A3B8;
+  padding: 24px 28px;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFF;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+/* Global Loading Indicator */
+.global-loading-indicator {
+  display: none;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6500, #008DDA, #059669);
+  background-size: 200% 100%;
+  animation: loading-bar 1.5s infinite linear;
+}
+
+/* Footer meta style */
+.footer-meta {
+  font-size: 11px;
+  opacity: 0.85;
+}

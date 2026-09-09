@@ -1,0 +1,32 @@
+GOVERNMENT OF INDIA
+MINISTRY OF STATISTICS AND PROGRAMME IMPLEMENTATION (MoSPI)
+DATA QUALITY ASSURANCE DIVISION (DQAD) & MEITY
+GUIDELINES ON STATISTICAL DATA GOVERNANCE, INTEGRITY AND PRIVACY
+DOCUMENT CODE: MoSPI-DQAD-GDL-2026-02
+
+MODULE 1: NATIONAL DATA GOVERNANCE FRAMEWORK
+The Indian Official Statistical System requires robust data governance principles to preserve public trust, impartiality, and statistical integrity. In conformity with the UN Fundamental Principles of Official Statistics, statistical authorities maintain professional independence in methodology, standards, and data dissemination.
+
+Section 1.1: Core Principles of Quality
+1. Relevance: Meeting the quantitative intelligence needs of governance, research, and civil society.
+2. Accuracy and Reliability: Faithfully measuring socioeconomic phenomena with estimated margins of error.
+3. Timeliness and Punctuality: Releasing macro indicators according to an Advance Release Calendar.
+4. Coherence and Comparability: Harmonizing definitions with national accounts and international classification standards (NIC, NCO).
+
+MODULE 2: AUTOMATED DATA EDITING AND IMPUTATION
+Section 2.1: Logical Consistency and Range Validation
+In modern CAPI and Web-CATI data collection platforms deployed by MoSPI, automated range checks and skip-pattern logic are executed real-time at the point of capture. Range validations identify extreme or impossible data values (e.g., respondent age exceeding 120 or consumption expenditure falling below mathematical minimums). Cross-variable logical checks verify relational consistency (e.g., verifying that education level is compatible with reported employment occupation).
+
+Section 2.2: Statistical Imputation Protocols
+Missing data due to non-response or field dropouts introduce distortion if ignored. Statistical imputation replaces missing items with plausible values:
+1. Deductive Imputation: Deducing the true missing value with near-certainty from related questionnaire entries.
+2. Cold-Deck Imputation: Utilizing fixed donor distributions from previous census or survey rounds.
+3. Hot-Deck Imputation: Selecting donor values dynamically from respondents in the same survey with identical demographic and geographical attributes.
+Imputed values must always be flagged in official microdata to ensure analytical transparency for researchers.
+
+MODULE 3: DATA PRIVACY, STATISTICAL CONFIDENTIALITY AND DPDP ACT
+Section 3.1: Confidentiality Under the Collection of Statistics Act
+Under the Collection of Statistics Act, 2008 (amended 2017), individual respondent disclosures are strictly protected. Information gathered by statistical officers can never be used as evidence in judicial proceedings against respondents, nor can it be disclosed to tax enforcement or commercial entities. All published microdata must undergo rigorous statistical disclosure control (SDC), including k-anonymity, l-diversity, and perturbation of sensitive geographical attributes.
+
+Section 3.2: Digital Personal Data Protection (DPDP) Act 2023 Alignment
+Government agencies acting as Data Fiduciaries must implement state-of-the-art technical and organizational safeguards. In official statistics, data minimization, pseudonymization, and purpose limitation are mandatory architectural requirements. Statistical personnel must complete certified privacy and ethics training before accessing unmasked microdata repositories.
